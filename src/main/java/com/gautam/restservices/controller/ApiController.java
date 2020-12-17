@@ -9,6 +9,6 @@ public class ApiController {
 
   @GetMapping("/userdetails")
   public UserDetails getUserDetailsObj(){
-    return new UserDetails("Gautam","Kashyap","Delhi");
+    return new UserDetails("Gautam","Chaurasia","Delhi");
   }
 }
