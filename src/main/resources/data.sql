@@ -1,0 +1,3 @@
+insert into user(ID,FIRST_NAME,LAST_NAME,EMAIL,ROLE,SSN,USER_NAME) values(2,'PANKAJ','chaurasia','PANKAJ@gmail.com','sse','s002','PANKAJ.chaurasia');
+insert into user(ID,FIRST_NAME,LAST_NAME,EMAIL,ROLE,SSN,USER_NAME) values(3,'PANAJ','chaurasia','PANKAJ@gmail.com','sse','s003','PANAJ.chaurasia');
+insert into user(ID,FIRST_NAME,LAST_NAME,EMAIL,ROLE,SSN,USER_NAME) values(4,'PAN','chaurasia','PANKAJ@gmail.com','sse','s004','PAN.chaurasia');
