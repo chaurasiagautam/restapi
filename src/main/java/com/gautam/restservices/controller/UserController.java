@@ -6,8 +6,8 @@ import com.gautam.restservices.exception.UserNotFoundException;
 import com.gautam.restservices.services.UserService;
 import java.util.List;
 import java.util.Optional;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +33,7 @@ public class UserController {
   }
 
   @PostMapping(value = "/createuser")
-  public ResponseEntity<Void> createUser(@RequestBody User user, UriComponentsBuilder builder){
+  public ResponseEntity<Void> createUser(@Valid @RequestBody User user, UriComponentsBuilder builder){
     try {
       User newUsr = service.createUser(user);
       HttpHeaders headers = new HttpHeaders();
