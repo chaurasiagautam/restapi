@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class CustomRestExceptionHandler {
 
+  private static final String EXP_MSG = "Exception from Rest Handler";
+
   @ExceptionHandler(UserNameNotFoundException.class)
   @ResponseStatus(HttpStatus.NOT_FOUND)
   public final CustomExpDetails handleUserNameNotFound(UserNameNotFoundException ex) {
@@ -19,5 +21,18 @@ public class CustomRestExceptionHandler {
      * return new ResponseEntity<>(expDetails,HttpStatus.NOT_FOUND);
      * For @RestControllerAdvice we do like below.
      */
+  }
+
+  @ExceptionHandler(OrderAlreadyExistException.class)
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
+  public final CustomExpDetails handleOrderAlreadyExist(OrderAlreadyExistException ex){
+    return new CustomExpDetails(new Date(), EXP_MSG,
+        ex.getMessage());
+  }
+
+  @ExceptionHandler(OrderNotFoundExcpetion.class)
+  @ResponseStatus(HttpStatus.NOT_FOUND)
+  public final CustomExpDetails handleOrderNotFound(OrderNotFoundExcpetion ex){
+    return new CustomExpDetails(new Date(),EXP_MSG,ex.getMessage());
   }
 }
